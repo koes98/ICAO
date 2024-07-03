@@ -1,1 +1,34 @@
-<!DOCTYPE html><html><head><title>My Vercel Project</title></head><body><h1>Hello, Vercel!</h1></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Viewer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .pdf-viewer {
+            margin: 20px;
+            text-align: center;
+        }
+        iframe {
+            width: 80%;
+            height: 500px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>PDF Viewer</h1>
+    <div class="pdf-viewer">
+        <h2>PDF 1</h2>
+        <iframe src="https://drive.google.com/file/d/11HMmwckQFq2DBlTqsU8Za2zYnU_ppVnE/preview"></iframe>
+    </div>
+    <div class="pdf-viewer">
+        <h2>PDF 2</h2>
+        <iframe src="https://drive.google.com/file/d/1JOzoFJmdIMIABj6ahTu2FRgXJ9VjxloA/preview"></iframe>
+    </div>
+    <!-- Add more PDFs as needed -->
+</body>
+</html>
