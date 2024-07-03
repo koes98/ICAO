@@ -69,7 +69,7 @@
         function renderPage(num) {
             pageRendering = true;
             pdfDoc.getPage(num).then(function(page) {
-                var viewport = page.getViewport({scale: calculateScale()});
+                var viewport = page.getViewport({scale: calculateScale(page)});
                 canvas.height = viewport.height;
                 canvas.width = viewport.width;
 
@@ -91,10 +91,11 @@
             document.getElementById('page-num').textContent = num;
         }
 
-        function calculateScale() {
+        function calculateScale(page) {
             var container = document.getElementById('pdf-viewer');
-            var widthScale = container.clientWidth / canvas.width;
-            var heightScale = container.clientHeight / canvas.height;
+            var viewport = page.getViewport({scale: 1});
+            var widthScale = container.clientWidth / viewport.width;
+            var heightScale = container.clientHeight / viewport.height;
             return Math.min(widthScale, heightScale);
         }
 
