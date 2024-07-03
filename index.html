@@ -63,14 +63,13 @@
             pageNum = 1,
             pageRendering = false,
             pageNumPending = null,
-            scale = 1.5,
             canvas = document.getElementById('pdf-canvas'),
             ctx = canvas.getContext('2d');
 
         function renderPage(num) {
             pageRendering = true;
             pdfDoc.getPage(num).then(function(page) {
-                var viewport = page.getViewport({scale: scale});
+                var viewport = page.getViewport({scale: calculateScale()});
                 canvas.height = viewport.height;
                 canvas.width = viewport.width;
 
@@ -90,6 +89,13 @@
             });
 
             document.getElementById('page-num').textContent = num;
+        }
+
+        function calculateScale() {
+            var container = document.getElementById('pdf-viewer');
+            var widthScale = container.clientWidth / canvas.width;
+            var heightScale = container.clientHeight / canvas.height;
+            return Math.min(widthScale, heightScale);
         }
 
         function queueRenderPage(num) {
