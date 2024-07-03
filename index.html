@@ -3,80 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PDF Viewer</title>
+    <title>ICAO-Alleanza Workshop</title>
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-        #pdf-container {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-        .navigation-controls {
-            position: fixed;
-            bottom: 10px;
-            display: flex;
-            justify-content: center;
-            width: 100%;
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 10px 0;
-            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
-        }
-        button {
-            margin: 0 10px;
-        }
+        @import url(https://themes.googleusercontent.com/fonts/css?kit=RFda8w1V0eDZheqfcyQ4EGb3DKsRMD34dqg1gT8Z-p7OfsfM6rvuuu7h1pY3r_-A);
+        .lst-kix_65n6bgba5gw-2>li:before{content:"\0025a0   "}.lst-kix_65n6bgba5gw-4>li:before{content:"\0025c6   "}
+        .lst-kix_65n6bgba5gw-1>li:before{content:"\0027a2   "}.lst-kix_65n6bgba5gw-5>li:before{content:"\0027a2   "}
+        li.li-bullet-0:before{margin-left:-18pt;white-space:nowrap;display:inline-block;min-width:18pt}
+        .lst-kix_65n6bgba5gw-3>li:before{content:"\0025cf   "}ul.lst-kix_65n6bgba5gw-5{list-style-type:none}
+        ul.lst-kix_65n6bgba5gw-6{list-style-type:none}ul.lst-kix_65n6bgba5gw-3{list-style-type:none}
+        ul.lst-kix_65n6bgba5gw-4{list-style-type:none}ul.lst-kix_65n6bgba5gw-1{list-style-type:none}
+        ul.lst-kix_65n6bgba5gw-2{list-style-type:none}ul.lst-kix_65n6bgba5gw-0{list-style-type:none}
+        .lst-kix_65n6bgba5gw-0>li:before{content:"\002756   "}.lst-kix_65n6bgba5gw-6>li:before{content:"\0025a0   "}
+        .lst-kix_65n6bgba5gw-8>li:before{content:"\0025c6   "}ul.lst-kix_65n6bgba5gw-7{list-style-type:none}
+        .lst-kix_65n6bgba5gw-7>li:before{content:"\0025cf   "}ul.lst-kix_65n6bgba5gw-8{list-style-type:none}
+        ol{margin:0;padding:0}table td,table th{padding:0}.c10{margin-left:36pt;padding-top:15pt;padding-left:0pt;padding-bottom:0pt;line-height:2.0;orphans:2;widows:2;text-align:left}
+        .c11{color:#403152;font-weight:700;text-decoration:none;vertical-align:baseline;font-size:20pt;font-family:"Merriweather";font-style:normal}
+        .c1{color:#000000;font-weight:400;text-decoration:none;vertical-align:baseline;font-size:11pt;font-family:"Arial";font-style:normal}
+        .c0{-webkit-text-decoration-skip:none;color:#1155cc;font-weight:700;text-decoration:underline;text-decoration-skip-ink:none;font-size:25pt;font-family:"Merriweather"}
+        .c7{color:#000000;font-weight:400;text-decoration:none;vertical-align:baseline;font-size:17pt;font-family:"Merriweather";font-style:normal}
+        .c4{color:#403152;font-weight:400;text-decoration:none;vertical-align:baseline;font-size:17pt;font-family:"Merriweather";font-style:normal}
+        .c16{padding-top:15pt;padding-bottom:0pt;line-height:1.15;orphans:2;widows:2;text-align:left}
+        .c2{padding-top:15pt;padding-bottom:0pt;line-height:1.0;orphans:2;widows:2;text-align:center}
+        .c15{padding-top:15pt;padding-bottom:0pt;line-height:1.5;orphans:2;widows:2;text-align:center}
+        .c9{padding-top:0pt;padding-bottom:0pt;line-height:1.15;orphans:2;widows:2;text-align:left}
+        .c5{font-size:25pt;font-family:"Merriweather";color:#403152;font-weight:700}
+        .c17{color:#403152;font-weight:700;font-size:13pt;font-family:"Merriweather"}
+        .c14{color:#000000;font-weight:400;font-size:14pt;font-family:"Merriweather"}
+        .c12{text-decoration:none;vertical-align:baseline;font-style:normal}
+        .c3{background-color:#ffffff;max-width:468pt;padding:72pt 72pt 72pt 72pt}
+        .c8{padding:0;margin:0}.c6{color:inherit;text-decoration:inherit}
+        .c13{height:11pt}
+        .title{padding-top:0pt;color:#000000;font-size:26pt;padding-bottom:3pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}
+        .subtitle{padding-top:0pt;color:#666666;font-size:15pt;padding-bottom:16pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}
+        li{color:#000000;font-size:11pt;font-family:"Arial"}
+        p{margin:0;color:#000000;font-size:11pt;font-family:"Arial"}
+        h1{padding-top:20pt;color:#000000;font-size:20pt;padding-bottom:6pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}
+        h2{padding-top:18pt;color:#000000;font-size:16pt;padding-bottom:6pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}
+        h3{padding-top:16pt;color:#434343;font-size:14pt;padding-bottom:4pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}
+        h4{padding-top:14pt;color:#666666;font-size:12pt;padding-bottom:4pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}
+        h5{padding-top:12pt;color:#666666;font-size:11pt;padding-bottom:4pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}
+        h6{padding-top:12pt;color:#666666;font-size:11pt;padding-bottom:4pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;font-style:italic;orphans:2;widows:2;text-align:left}
     </style>
 </head>
-<body>
-    <div id="pdf-container">
-        <iframe id="pdf-viewer" src="Speakers.pdf#zoom=FitH"></iframe>
+<body class="c3 doc-content">
+    <div>
+        <p class="c2">
+            <span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 180.96px; height: 65.50px;">
+                <img alt="" src="images/image2.jpg" style="width: 180.96px; height: 131.89px; margin-left: 0.00px; margin-top: -34.17px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title="">
+            </span>
+            <span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 302.50px; height: 54.92px;">
+                <img alt="" src="images/image1.png" style="width: 302.50px; height: 54.92px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title="">
+            </span>
+        </p>
     </div>
-    <div class="navigation-controls">
-        <button id="prev-page">Previous</button>
-        <button id="next-page">Next</button>
-    </div>
-    <script>
-        let currentPage = 1;
-        const totalPages = 10;  // You need to set the actual number of pages
-
-        function updateIframe() {
-            const iframe = document.getElementById('pdf-viewer');
-            iframe.src = `Speakers.pdf#page=${currentPage}&zoom=FitH`;
-        }
-
-        document.getElementById('prev-page').addEventListener('click', () => {
-            if (currentPage > 1) {
-                currentPage--;
-                updateIframe();
-            }
-        });
-
-        document.getElementById('next-page').addEventListener('click', () => {
-            if (currentPage < totalPages) {
-                currentPage++;
-                updateIframe();
-            }
-        });
-
-        window.addEventListener('resize', () => {
-            updateIframe();
-        });
-    </script>
+    <p class="c9 c13"><span class="c7"></span></p>
+    <p class="c9"><span class="c7">ICAO-Alleanza Workshop</span></p>
+    <p class="c9 c13"><span class="c7"></span></p>
+    <p class="c9 c13"><span class="c7"></span></p>
+    <p class="c15"><span class="c11">Fostering Generational Change in Agriculture:<br>the Role of Cooperatives</span></p>
+    <p class="c13 c16"><span class="c12 c17"></span></p>
+    <p class="c2"><span class="c4">July 9-10, 2024</span></p>
+    <p class="c2"><span class="c4">Rome, Italy</span></p>
+    <p class="c2 c13"><span class="c4"></span></p>
+    <p class="c2 c13"><span class="c4"></span></p>
+    <ul class="c8 lst-kix_65n6bgba5gw-0 start">
+        <li class="c10 li-bullet-0"><span class="c0"><a class="c6" href="https://www.google.com/url?q=https://drive.google.com/file/d/1JOzoFJmdIMIABj6ahTu2FRgXJ9VjxloA/view?usp%3Dshare_link&amp;sa=D&amp;source=editors&amp;ust=1720043847681736&amp;usg=AOvVaw0LynQ55rxge984EBe26TIP">Background and Objectives</a></span></li>
+        <li class="c10 li-bullet-0"><span class="c0"><a class="c6" href="https://www.google.com/url?q=https://drive.google.com/file/d/1BLzWb9Iw5Sxq66HZzrOiwhVJC20XuR8L/view?usp%3Dshare_link&amp;sa=D&amp;source=editors&amp;ust=1720043847682076&amp;usg=AOvVaw0Ex1vTClYaBO0jS8qJW9so">Agenda (Program)</a></span></li>
+        <li class="c10 li-bullet-0"><span class="c0"><a class="c6" href="https://www.google.com/url?q=https://drive.google.com/file/d/15oMvSItG9Vp828g29pppzEr27SYyVy6d/view?usp%3Dshare_link&amp;sa=D&amp;source=editors&amp;ust=1720043847682322&amp;usg=AOvVaw3Fm8kxO-OdYkz7C_X7GFbB">Speakers</a></span></li>
+        <li class="c10 li-bullet-0"><span class="c5">Presentation Materials</span></li>
+    </ul>
 </body>
 </html>
