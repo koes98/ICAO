@@ -3,87 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ICAO-Alleanza Workshop</title>
+    <title>PDF Viewer</title>
     <style>
-        @import url(https://themes.googleusercontent.com/fonts/css?kit=RFda8w1V0eDZheqfcyQ4EGb3DKsRMD34dqg1gT8Z-p7OfsfM6rvuuu7h1pY3r_-A);
-        body {
+        body, html {
             margin: 0;
             padding: 0;
-            background-color: #ffffff;
-            font-family: Arial, sans-serif;
+            height: 100%;
+            width: 100%;
         }
-        .container {
-            max-width: 1000px;
-            margin: auto;
-            padding: 20px;
-            text-align: center;
+        #pdf-viewer {
+            width: 100%;
+            height: 100%;
+            border: none;
         }
-        .content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .header-images {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        .header-images img {
-            margin: 0 10px;
-        }
-        .title {
-            font-size: 5vw; /* Adjust text size based on viewport width */
-            color: #403152;
-            font-weight: 700;
-            white-space: nowrap;
-        }
-        .subtitle {
-            font-size: 3vw; /* Adjust text size based on viewport width */
-            color: #403152;
-            font-weight: 400;
-            white-space: nowrap;
-        }
-        .list-item {
-            font-size: 2.5vw; /* Adjust text size based on viewport width */
-            margin: 15px 0;
-            white-space: nowrap;
-        }
-        .list-item a {
-            text-decoration: none;
-            color: #1155cc;
-            font-weight: 700;
-        }
-        @media (min-width: 1000px) {
-            .title {
-                font-size: 2.5em;
-            }
-            .subtitle {
-                font-size: 1.5em;
-            }
-            .list-item {
-                font-size: 1.2em;
+        @media print {
+            #print-button {
+                display: none;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="content">
-            <div class="header-images">
-                <img src="image1.png" alt="" style="width: 302.50px; height: 54.92px;">
-                <img src="image2.jpg" alt="" style="width: auto; height: 54.92px;">
-            </div>
-            <p class="title">ICAO-Alleanza Workshop</p>
-            <p class="subtitle">Fostering Generational Change in Agriculture: the Role of Cooperatives</p>
-            <p class="subtitle">July 9-10, 2024, Rome, Italy</p>
-            <ul>
-                <li class="list-item"><a href="https://www.google.com/url?q=https://drive.google.com/file/d/1JOzoFJmdIMIABj6ahTu2FRgXJ9VjxloA/view?usp%3Dshare_link&amp;sa=D&amp;source=editors&amp;ust=1720043847681736&amp;usg=AOvVaw0LynQ55rxge984EBe26TIP">Background and Objectives</a></li>
-                <li class="list-item"><a href="https://www.google.com/url?q=https://drive.google.com/file/d/1BLzWb9Iw5Sxq66HZzrOiwhVJC20XuR8L/view?usp%3Dshare_link&amp;sa=D&amp;source=editors&amp;ust=1720043847682076&amp;usg=AOvVaw0Ex1vTClYaBO0jS8qJW9so">Agenda (Program)</a></li>
-                <li class="list-item"><a href="https://www.google.com/url?q=https://drive.google.com/file/d/15oMvSItG9Vp828g29pppzEr27SYyVy6d/view?usp%3Dshare_link&amp;sa=D&amp;source=editors&amp;ust=1720043847682322&amp;usg=AOvVaw3Fm8kxO-OdYkz7C_X7GFbB">Speakers</a></li>
-                <li class="list-item">Presentation Materials</li>
-            </ul>
-        </div>
-    </div>
+    <button id="print-button" onclick="printPDF()">Print PDF</button>
+    <iframe id="pdf-viewer" src="Speakers.pdf"></iframe>
+
+    <script>
+        function printPDF() {
+            const pdfViewer = document.getElementById('pdf-viewer');
+            pdfViewer.contentWindow.print();
+        }
+    </script>
 </body>
 </html>
