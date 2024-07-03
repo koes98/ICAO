@@ -7,10 +7,17 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
         }
         .pdf-viewer {
             margin: 20px;
             text-align: center;
+        }
+        .full-screen-iframe {
+            width: 100%;
+            height: 100vh;
+            border: none;
         }
         iframe {
             width: 80%;
@@ -20,11 +27,7 @@
     </style>
 </head>
 <body>
-    <h1>PDF Viewer</h1>
-    <div class="pdf-viewer">
-        <h2>PDF 1</h2>
-        <iframe src="https://drive.google.com/file/d/11HMmwckQFq2DBlTqsU8Za2zYnU_ppVnE/preview"></iframe>
-    </div>
+    <iframe src="https://drive.google.com/file/d/11HMmwckQFq2DBlTqsU8Za2zYnU_ppVnE/preview" class="full-screen-iframe"></iframe>
     <div class="pdf-viewer">
         <h2>PDF 2</h2>
         <iframe src="https://drive.google.com/file/d/1JOzoFJmdIMIABj6ahTu2FRgXJ9VjxloA/preview"></iframe>
