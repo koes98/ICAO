@@ -33,19 +33,19 @@
             margin: 0 10px;
         }
         .title {
-            font-size: 2.5em;
+            font-size: 5vw; /* Adjust text size based on viewport width */
             color: #403152;
             font-weight: 700;
             white-space: nowrap;
         }
         .subtitle {
-            font-size: 1.5em;
+            font-size: 3vw; /* Adjust text size based on viewport width */
             color: #403152;
             font-weight: 400;
             white-space: nowrap;
         }
         .list-item {
-            font-size: 1.2em;
+            font-size: 2.5vw; /* Adjust text size based on viewport width */
             margin: 15px 0;
             white-space: nowrap;
         }
@@ -54,14 +54,25 @@
             color: #1155cc;
             font-weight: 700;
         }
+        @media (min-width: 1000px) {
+            .title {
+                font-size: 2.5em;
+            }
+            .subtitle {
+                font-size: 1.5em;
+            }
+            .list-item {
+                font-size: 1.2em;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="content">
             <div class="header-images">
-                <img src="images/image2.jpg" alt="" style="width: 180.96px; height: 131.89px;">
-                <img src="images/image1.png" alt="" style="width: 302.50px; height: 54.92px;">
+                <img src="image1.png" alt="" style="width: 302.50px; height: 54.92px;">
+                <img src="image2.jpg" alt="" style="width: auto; height: 54.92px;">
             </div>
             <p class="title">ICAO-Alleanza Workshop</p>
             <p class="subtitle">Fostering Generational Change in Agriculture: the Role of Cooperatives</p>
